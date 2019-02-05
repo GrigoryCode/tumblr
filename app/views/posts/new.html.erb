@@ -1,4 +1,5 @@
 <h1>Make Something</h1>
+
 <%= form_for :post, url: posts_path do |f| %>
   <p>
     <%= f.label :title %><br>
@@ -7,7 +8,7 @@
 
   <p>
     <%= f.label :body %><br>
-    <%= f.text_area :title %>
+    <%= f.text_area :body %>
   </p>
 
   <p>
