@@ -1,11 +1,12 @@
-<div class="jumbotron">
-  <div>
-    <p><b><%= comment.name %></b></p>
-    <p><%= comment.body %></p>
+<div class="card mb-4">
+  <div class="card-body">
+    <h3 class="jumbotron-heading"><%= comment.name %></h3>
+    <p class="lead"><%= comment.body %></p>
     <hr>
     <p class="text-muted"><%= time_ago_in_words(comment.created_at) %> ago</p>
-  </div>
+
   <% if user_signed_in? %>
-    <p><%= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure? '} %></p>
+    <p><%= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure? '}, class: "btn btn-outline-primary" %></p>
   <% end %>
+    </div>
 </div>

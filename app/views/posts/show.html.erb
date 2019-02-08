@@ -8,17 +8,18 @@
   <hr class="my-4">
   <p class="text-muted">
     Submitted <%= time_ago_in_words(@post.created_at) %> ago
-    <% if user_signed_in? %>
-      <%= link_to "Edit", edit_post_path(@post) %>
-      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
   </p>
+    <% if user_signed_in? %>
+      <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-primary" %>
+      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary" %>
+    <% end %>
+
   </div>
 
 
   <div>
-    <h3><%= @post.comments.count %> Comments</h3>
+    <h4><%= @post.comments.count %> Comments<h4><br>
     <%= render @post.comments %>
-    <h3> Join Discussion: </h3>
+    <h4> Join Discussion: </h4>
     <%= render "comments/form" %>
   </div>
