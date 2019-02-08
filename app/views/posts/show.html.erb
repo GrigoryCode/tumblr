@@ -10,15 +10,15 @@
     Submitted <%= time_ago_in_words(@post.created_at) %> ago
   </p>
     <% if user_signed_in? %>
-      <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-primary" %>
-      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary" %>
+      <%= link_to "Edit", edit_post_path(@post), class: "btn btn-link" %>
+      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
     <% end %>
 
   </div>
 
 
   <div>
-    <h4><%= @post.comments.count %> Comments<h4><br>
+    <p><%= @post.comments.count %> Comments<p><br>
     <%= render @post.comments %>
     <h4> Join Discussion: </h4>
     <%= render "comments/form" %>

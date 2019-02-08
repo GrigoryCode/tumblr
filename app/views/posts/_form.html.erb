@@ -1,7 +1,7 @@
 <%= form_for @post do |f| %>
   <% if @post.errors.any? %>
     <div>
-      <h2><%= pluralize(@post.errors.count, "error") %> stopped this post from saving</h2>
+      <h4><%= pluralize(@post.errors.count, "error") %> stopped this post from saving</h4>
       <ul>
         <% @post.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -9,17 +9,17 @@
       </ul>
     </div>
   <% end %>
-  <p>
+  <p class=" form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </p>
 
-  <p>
+  <p class=" form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: "form-control" %>
   </p>
 
-  <p>
-    <%= f.submit %>
+  <p class=" form-group">
+    <%= f.submit "Create Post", class: "btn btn-primary" %>
   </p>
 <% end %>

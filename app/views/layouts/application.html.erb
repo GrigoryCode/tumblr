@@ -16,44 +16,33 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
-
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "Make Post", new_post_path, class: "nav-link" %>
-            </li>
-
-
-
-            <li class="nav-item">
-              <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= button_to "Log In", new_user_session_path, class: "btn btn-primary" %>
-            </li>
-          <% end %>
-
+          <li class="nav-item"><%= link_to "About Us", about_path, class: "nav-link" %></li>
         </ul>
+        <div class="form-inline my-2 my-lg-0">
+          <% if user_signed_in? %>
+              <%= link_to "Make Post", new_post_path, class: "nav-link" %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <% else %>
+              <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+          <% end %>
+        </div>
       </div>
     </nav>
-
 
     <main class="container">
       <div>
         <br>
           <% if current_page?(root_path) %>
-            <p>Post Feed</p>
+            <p class="lead">POST FEED</p>
           <% elsif current_page?(about_path) %>
-            <p>My Site</p>
+            <p class="lead">MY SITE</p>
           <% else %>
-            <%= link_to "Back to Post Feed", root_path %>
+            <%= link_to "Back to POST FEED", root_path, class: "lead nav-link" %>
           <% end %>
+          <br>
       </div>
-      <br>
       <% flash.each do |name, msg| %>
         <%= content_tag(:div, msg) %>
       <% end %>
@@ -61,6 +50,5 @@
       <%= yield %>
 
     </main>
-
   </body>
 </html>
