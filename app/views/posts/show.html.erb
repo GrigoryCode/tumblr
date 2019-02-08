@@ -1,9 +1,9 @@
-<div id="post_content">
-  <h1 class="title">
+<div>
+  <h1>
     <%= @post.title %>
   </h1>
 
-  <p class="date">
+  <p>
     Submitted <%= time_ago_in_words(@post.created_at) %> ago
     <% if user_signed_in? %>
       <%= link_to "Edit", edit_post_path(@post) %> |
@@ -11,11 +11,11 @@
     <% end %>
   </p>
 
-  <p class="body">
+  <p>
     <%= @post.body %>
   </p>
 
-  <div id="comments">
+  <div>
     <h2><%= @post.comments.count %> Comments</h2>
     <%= render @post.comments %>
     <h3> Join Discussion: </h3>

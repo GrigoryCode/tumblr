@@ -1,6 +1,6 @@
 <%= form_for @post do |f| %>
   <% if @post.errors.any? %>
-    <div id="errors">
+    <div>
       <h2><%= pluralize(@post.errors.count, "error") %> stopped this post from saving</h2>
       <ul>
         <% @post.errors.full_messages.each do |msg| %>
