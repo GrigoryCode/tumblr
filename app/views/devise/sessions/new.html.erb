@@ -1,13 +1,13 @@
-<div>
+<div id="page_wrapper">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div>
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
   <br>
-  <div>
+  <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
@@ -19,7 +19,7 @@
     </div>
   <% end %>
   <br>
-  <div>
+  <div class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>

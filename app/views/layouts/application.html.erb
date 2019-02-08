@@ -12,7 +12,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to "Tumblr", root_path, class: "navbar-brand" %>
+      <h1><%= link_to "Tumblr", root_path, class: "badge badge-secondary" %></h1>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,11 +25,11 @@
               <%= link_to "Make Post", new_post_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+              <%= button_to "Log In", new_user_session_path, class: "btn btn-outline-secondary" %>
             </li>
           <% end %>
         </ul>
@@ -38,15 +38,16 @@
 
     <main class="container">
       <div>
-        <% if current_page?(root_path) %>
-          <p>Post Feed</p>
-        <% elsif current_page?(about_path) %>
-          <p>My Site</p>
-        <% else %>
-          <%= link_to "Back to Post Feed", root_path %>
-        <% end %>
+        <br>
+          <% if current_page?(root_path) %>
+            <p>Post Feed</p>
+          <% elsif current_page?(about_path) %>
+            <p>My Site</p>
+          <% else %>
+            <%= link_to "Back to Post Feed", root_path %>
+          <% end %>
       </div>
-
+      <br>
       <% flash.each do |name, msg| %>
         <%= content_tag(:div, msg) %>
       <% end %>
