@@ -12,7 +12,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light container">
-      <h1><%= link_to "Tumblr", root_path, class: "badge badge-secondary" %></h1>
+      <h1><%= link_to "Tumblr", root_path, class: "blog-header-logo text-dark" %></h1>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,11 +35,11 @@
       <div>
         <br>
           <% if current_page?(root_path) %>
-            <p class="lead">POST FEED</p>
+            <p class="lead">Post feed</p>
           <% elsif current_page?(about_path) %>
-            <p class="lead">MY SITE</p>
+            <p class="lead">My site</p>
           <% else %>
-            <%= link_to "Back to POST FEED", root_path, class: "lead nav-link" %>
+            <%= link_to "Back to Post Feed", root_path, class: "lead nav-link" %>
           <% end %>
           <br>
       </div>

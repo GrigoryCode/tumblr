@@ -2,7 +2,6 @@
   <div class="card-body">
     <h3 class="jumbotron-heading"><%= comment.name %></h3>
     <p class="lead"><%= comment.body %></p>
-    <hr class="my-4">
     <p class="text-muted">
       <%= time_ago_in_words(comment.created_at) %> ago
     </p>
