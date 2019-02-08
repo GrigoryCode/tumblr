@@ -11,22 +11,24 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light container">
-      <h1><%= link_to "Tumblr", root_path, class: "blog-header-logo text-dark" %></h1>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><%= link_to "About Us", about_path, class: "nav-link" %></li>
-        </ul>
-        <div class="form-inline my-2 my-lg-0">
-          <% if user_signed_in? %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <h1><%= link_to "Tumblr", root_path, class: "blog-header-logo text-dark" %></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><%= link_to "About Us", about_path, class: "nav-link" %></li>
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+            <% if user_signed_in? %>
               <%= link_to "Make Post", new_post_path, class: "nav-link" %>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          <% else %>
+            <% else %>
               <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </nav>
