@@ -1,16 +1,16 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
+  <p class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </p>
 
-  <p>
+  <p class="form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: "form-control"  %>
   </p>
   <br>
-  <p>
-    <%= f.submit %>
+  <p class="form-group">
+    <%= f.submit "Add comment", class: "btn btn-primary" %>
   </p>
 
 <% end %>
