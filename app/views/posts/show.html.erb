@@ -1,8 +1,8 @@
   <div class="jumbotron">
-  <h2 class="jumbotron-heading">
+  <h4 class="jumbotron-heading">
     <%= @post.title %>
-  </h2>
-  <p class="lead">
+  </h4>
+  <p>
     <%= @post.body %>
   </p>
   <hr class="my-4">
@@ -20,6 +20,6 @@
   <div>
     <p><%= @post.comments.count %> Comments<p><br>
     <%= render @post.comments %>
-    <h4> Join Discussion: </h4>
+    <p> Join Discussion: </p>
     <%= render "comments/form" %>
   </div>
