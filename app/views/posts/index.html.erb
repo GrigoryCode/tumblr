@@ -2,7 +2,6 @@
   <div class="jumbotron">
     <h4 class="jumbotron-heading"><%= link_to post.title, post %></h4>
     <p><%= truncate(post.body, length:200) %></p>
-    <hr class="my-4">
     <p class="text-muted"><%= time_ago_in_words(post.created_at) %> ago</p>
   </div>
 <% end %>
